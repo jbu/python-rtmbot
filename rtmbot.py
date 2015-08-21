@@ -187,7 +187,8 @@ if __name__ == "__main__":
 
     config = yaml.load(file(args.config or 'rtmbot.conf', 'r'))
     debug = config["DEBUG"]
-    bot = RtmBot(config["SLACK_TOKEN"])
+    slack = os.getenv("SLACK_TOKEN", config["SLACK_TOKEN"])
+    bot = RtmBot(slack)
     site_plugins = []
     files_currently_downloading = []
     job_hash = {}
