@@ -16,7 +16,7 @@ workable_token = os.environ['WORKABLE_TOKEN']
 base_url = 'https://www.workable.com/spi/v3/accounts/lshift'
 headers = {'Content-Type': 'application/json', 
            'Authorization': 'Bearer ' + workable_token}
-shortcode = 'F6E247C040'
+shortcode = os.environ['WORKABLE_JOB']
 last_change = arrow.utcnow().replace(hours=-1)
 
 
